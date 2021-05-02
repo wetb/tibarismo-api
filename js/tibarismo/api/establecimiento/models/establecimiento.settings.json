@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "establecimientos",
+  "info": {
+    "name": "establecimiento",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "matricula": {
+      "unique": true,
+      "required": false,
+      "type": "biginteger"
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "ubicacion": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "infoContacto": {
+      "type": "string"
+    },
+    "tipoEstablecimiento": {
+      "type": "enumeration",
+      "enum": [
+        "bar",
+        "hotel",
+        "restaurante"
+      ]
+    },
+    "fotos": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "calificacion": {
+      "type": "enumeration",
+      "enum": [
+        "uno",
+        "dos",
+        "tres",
+        "cuatro",
+        "cinco"
+      ]
+    },
+    "user": {
+      "via": "establecimientos",
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}
