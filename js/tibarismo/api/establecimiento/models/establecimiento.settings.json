@@ -32,9 +32,11 @@
     "tipoEstablecimiento": {
       "type": "enumeration",
       "enum": [
-        "bar",
+        "restaurante",
         "hotel",
-        "restaurante"
+        "sitios turisticos",
+        "entretenimiento",
+        "negocios tradicionales"
       ]
     },
     "fotos": {
